@@ -1,0 +1,27 @@
+{
+  "name": "clipboard Helper",
+  "description": "Help you to record every copy on your browser!",
+  "version": "1.0",
+  "manifest_version": 3,
+  "background": {
+    "service_worker": "scripts/background.js"
+  },
+  "permissions": [
+    "storage",
+    "activeTab",
+    "scripting",
+    "tabs",
+    "clipboardRead",
+    "clipboardWrite"
+  ],
+  "content_scripts": [
+    {
+      "all_frames": true,
+      "matches": ["<all_urls>"],
+      "js": ["scripts/content.js"]
+    }
+  ],
+  "action": {
+    "default_popup": "index.html"
+  }
+}

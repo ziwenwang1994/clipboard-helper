@@ -1,0 +1,86 @@
+body {
+    font-family: "Roboto", sans-serif;
+    padding: 20px;
+    overflow: auto;
+    width: 400px;
+    height: 600px;
+    background: #2e3440;
+    color: #eceff4;
+  }
+
+  * {
+    font-size: 14px;
+    box-sizing: border-box;
+  }
+
+  .record {
+    margin: 4px;
+    background: #3b4252;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+
+  .record p {
+    word-break: break-all;
+    word-wrap: break-word;
+    margin: 4px;
+    padding: 10px;
+    color: #d8dee9;
+  }
+
+  .record .content {
+    display: flex;
+    align-items: stretch;
+  }
+
+  .record .content .date {
+    all:unset;
+    font-weight: bold;
+    width: 64px;
+    padding: 10px;
+    color: #88c0d0;
+    margin: 4px;
+  }
+
+  .record .content p {
+    flex: 1;
+    border-left: 2px solid #88c0d0;
+    transition: all 0.3s ease-in-out;
+  }
+
+  .record .content p:hover {
+    background: #4c566a;
+  }
+
+  .record .btns {
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+    background: #3b4252;
+  }
+
+  .record .btns button {
+    all: unset;
+    margin: 0 8px;
+    padding: 4px 8px;
+    cursor: pointer;
+    background: #88c0d0;
+    color: #2e3440;
+    border-radius: 4px;
+    text-align: center;
+    transition: all 0.3s ease-in-out;
+  }
+
+  .record .btns button.del {
+    background: #7b5757;
+    color: white;
+  }
+
+  .record .btns button.del:hover {
+    background: #7f2525;
+  }
+
+  .record .btns button:hover {
+    background: #81a1c1;
+  }
