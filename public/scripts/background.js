@@ -1,4 +1,5 @@
 let db;
+let isRecording = { value: true };
 
 /**
  * Opens the IndexedDB database and sets up the object store if necessary.
@@ -39,7 +40,6 @@ async function storeCopiedText(text) {
   const request = objectStore.add({ text: text, timestamp: Date.now() });
 
   request.onsuccess = () => {
-    console.log("Text added to database:", text);
     chrome.runtime.sendMessage({ type: "UPDATE_POPUP", text: text }); // Send message to update the popup
   };
 
@@ -49,10 +49,19 @@ async function storeCopiedText(text) {
 }
 
 // Listener for messages from other parts of the extension
-chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
+chrome.runtime.onMessage.addListener((message) => {
+  if(!isRecording.value) return;
   if (message.type === "COPY_EVENT") {
     const copiedText = message.text;
     storeCopiedText(copiedText); // Store the copied text
+  }
+});
+
+// Listener for messages from other parts of the extension
+chrome.runtime.onMessage.addListener((message) => {
+  if (message.type === "UPDATE_RECORDING") {
+    isRecording.value = message.text === "1";
+    console.log(isRecording.value)
   }
 });
 
