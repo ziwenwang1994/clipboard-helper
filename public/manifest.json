@@ -3,6 +3,9 @@
   "description": "Help you to record every copy on your browser!",
   "version": "1.0",
   "manifest_version": 3,
+  "author": {
+    "email": "ziwenw4900@gmail.com"
+  },
   "background": {
     "service_worker": "scripts/background.js"
   },
@@ -22,6 +25,13 @@
     }
   ],
   "action": {
-    "default_popup": "index.html"
+    "default_popup": "index.html",
+    "default_icon": "logo.png"
+  },
+  "icons": {
+    "16": "logo.png",
+    "32": "logo.png",
+    "48": "logo.png",
+    "128": "logo.png"
   }
 }
