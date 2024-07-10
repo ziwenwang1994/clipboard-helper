@@ -1,10 +1,10 @@
 <script setup>
-import { useCounterStore } from "@/stores/counter";
+import { useServiceWorkerStore } from "@/stores/serviceWorker";
 import RecordList from "./RecordList.vue";
 import { computed } from "vue";
 import { ElButton } from "element-plus";
 
-const store = useCounterStore();
+const store = useServiceWorkerStore();
 const recordsToShow = computed(() => store.records);
 const clearAll = store.clearRecords;
 const toggleRecording = store.toggleRecording;

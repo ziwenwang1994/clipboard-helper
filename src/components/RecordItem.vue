@@ -1,13 +1,13 @@
 <script setup>
 import { ElButton } from "element-plus"
-import { useCounterStore } from "@/stores/counter";
+import { useServiceWorkerStore } from "@/stores/serviceWorker";
 import {
     Delete,
     CopyDocument
 } from '@element-plus/icons-vue'
 import dayjs from "dayjs"
 import { ref } from "vue";
-const store = useCounterStore();
+const store = useServiceWorkerStore();
 const {
     text, timestamp, cid
 } = defineProps({

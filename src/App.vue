@@ -1,15 +1,10 @@
 <script setup>
 import { RouterView, useRouter } from 'vue-router'
-import { onBeforeMount } from "vue";
-import { useCounterStore } from './stores/counter';
+import { useServiceWorkerStore } from "@/stores/serviceWorker";
 
-const store = useCounterStore();
+const store = useServiceWorkerStore();
 const router = useRouter();
-
-onBeforeMount(async () => {
-  await store.init();
-  router.push("/");
-})
+store.init().then(() => router.push("/"));
 </script>
 
 <template>

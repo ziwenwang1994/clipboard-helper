@@ -2,7 +2,7 @@ import { ref, computed } from 'vue'
 import { defineStore } from 'pinia'
 import store from 'store2'
 
-export const useCounterStore = defineStore('counter', () => {
+export const useServiceWorkerStore = defineStore('counter', () => {
   const count = ref(0)
   const records = ref([])
   const indexedDb = ref(null)
