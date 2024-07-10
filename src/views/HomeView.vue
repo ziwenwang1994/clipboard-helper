@@ -1,9 +1,9 @@
 <script setup>
-import TheWelcome from '../components/ClipboardContainer.vue'
+import Clipboard from '../components/ClipboardContainer.vue'
 </script>
 
 <template>
   <main>
-    <TheWelcome />
+    <Clipboard />
   </main>
 </template>
